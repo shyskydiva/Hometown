@@ -8,32 +8,34 @@
     </head>
     <body>
         <div class="wrapper">
-            <a href="https://www.baltimorecountymd.gov/">
-                <img id="logo" src="<?php echo $path;?>assets/img/BaltimoreLogo3.png" alt="Baltimore, MD" title="Baltimore, MD" width="100">
-            </a>
-            <div class="navbar">
-                <a href="<?php echo $path;?>home/index.php">Home</a>
-                <div class="dropdown">
-                    <a href="#">Activities</a>
-                    <button class="dropbtn">
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="<?php echo $path;?>activities/activities1.php">National Aquarium</a>
-                        <a href="<?php echo $path;?>activities/activities2.php">Maryland Zoo</a>
+            <header class="topbar">
+                <a href="https://www.baltimorecountymd.gov/">
+                    <img id="logo" src="<?php echo $path;?>assets/img/BaltimoreLogo3.png" alt="Baltimore, MD" title="Baltimore, MD" width="100">
+                </a>
+                <div class="navbar">
+                    <a href="<?php echo $path;?>home/index.php">Home</a>
+                    <div class="dropdown">
+                        <a href="#">Activities</a>
+                        <button class="dropbtn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="<?php echo $path;?>activities/activities1.php">National Aquarium</a>
+                            <a href="<?php echo $path;?>activities/activities2.php">Maryland Zoo</a>
+                        </div>
                     </div>
-                </div>
-                <div class="dropdown">
-                    <a href="#">Food</a>
-                    <button class="dropbtn">
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="<?php echo $path;?>food/food1.php">Woodberry Kitchen</a>
-                        <a href="<?php echo $path;?>food/food2.php">The Reserve Restaurant</a>
+                    <div class="dropdown">
+                        <a href="#">Food</a>
+                        <button class="dropbtn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="<?php echo $path;?>food/food1.php">Woodberry Kitchen</a>
+                            <a href="<?php echo $path;?>food/food2.php">The Reserve Restaurant</a>
+                        </div>
                     </div>
+                    <a href="<?php echo $path;?>rest/rest.php">Rest</a>
+                    <a href="<?php echo $path;?>feedback/feedback.php">Feedback</a>
+                    <a href="<?php echo $path;?>comments/comments.php">Comments</a>
                 </div>
-                <a href="<?php echo $path;?>rest/rest.php">Rest</a>
-                <a href="<?php echo $path;?>feedback/feedback.php">Feedback</a>
-                <a href="<?php echo $path;?>comments/comments.php">Comments</a>
-            </div>
+            </header>
