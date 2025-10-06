@@ -12,7 +12,7 @@
                     }
             ?>
             &nbsp; &nbsp;
-            <p>&copy; 2025 Shyanne Cortes</p>  
+            <p class="name">&copy; 2025 Shyanne Cortes</p>  
         </footer>
     </div>
 </body>

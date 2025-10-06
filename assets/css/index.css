@@ -1,8 +1,25 @@
+/* ------------------------------
+   GLOBAL STYLES
+------------------------------ */
 body {
   margin: 0;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
+  background-color: #F4EFEA;
+  overflow-x: hidden;
 }
 
+h3 {
+  font-size: 2em;
+  font-family: "Playfair Display";
+}
+
+p {
+  font-size: 1.2em;
+}
+
+/* ------------------------------
+   HEADER / NAVBAR
+------------------------------ */
 #logo {
   width: 100px;
   height: 100px;
@@ -14,60 +31,22 @@ body {
   margin: 0;
 }
 
-#hero-text {
-  font-family: "Open Sans", sans-serif;
-  font-size: 2.2em;
-  color: white;
-  text-shadow: 2px 2px #242424;
-  margin-top: 0;
-  display: block;
-  border-right: 2px solid white; /* cursor */
-  white-space: nowrap;
-  overflow: hidden;
-  animation: blinkCursor 0.7s step-end infinite;
-  margin-bottom: 0;
-}
-
-@keyframes blinkCursor {
-  from { border-color: transparent; }
-  to { border-color: white; }
-}
-
-#explore {
-  margin-top: 1vw;
-  background-color: #19578A;
-  color: white;
-  border: none;
-  border-radius: 7px;
-  font-size: 1.75em;
-  padding: 0.2em 1.2vw;
-}
-
-#explore:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-  cursor: pointer;
-  background-color: #124167;
-}
-
-.wrapper {
-  min-height: 50vw;
-  background-image: url("../img/inner-harbor-skyline.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-/* keep logo + navbar at the top */
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 2vw;
-  padding-right: 2vw;
+  padding: 0 2vw;
 }
 
-/* NAVBAR */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 .navbar {
   margin-top: 0;
   padding-top: 20px;
@@ -75,32 +54,36 @@ body {
   align-items: center;
   justify-content: flex-end;
   font-size: 1.15em;
-  gap: 40px; /* equal spacing between all items */
+  gap: 40px;
+  z-index: 10;
 }
 
 .navbar a,
 .dropdown {
   font-family: "Open Sans", sans-serif;
-  color: rgb(255, 255, 255);
+  color: white;
   text-shadow: 2px 2px #242424;
   font-weight: bold;
   text-decoration: none;
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0; /* normalize spacing */
+  padding: 0;
 }
 
-.navbar a {
-  padding: 14px 0; /* consistent vertical padding */
+.navbar a,
+.dropdown a {
+  text-align: center;
+  padding: 14px 0;
 }
 
+/* Dropdown Button */
 .dropdown .dropbtn {
   font-size: 1.15em;
   border: none;
   outline: none;
   background: none;
-  color: rgb(255, 255, 255);
+  color: white;
   cursor: pointer;
   font-family: inherit;
   padding: 14px 0;
@@ -109,18 +92,18 @@ body {
 }
 
 .dropdown .dropbtn i {
-  margin-left: 6px; /* spacing between text & caret */
+  margin-left: 6px;
 }
 
-/* DROPDOWN */
+/* Dropdown Menu */
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%; /* directly below parent */
+  top: 100%;
   left: 0;
   background-color: #f9f9f9;
   min-width: 120px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -146,7 +129,18 @@ body {
   color: #19578A;
 }
 
-/* HERO */
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+.wrapper {
+  min-height: 50vw;
+  background-image: url("../img/inner-harbor-skyline.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 .hero {
   position: absolute;
   top: 50%;
@@ -154,22 +148,311 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
+  padding: 0 2vw; /* keeps it inside the screen edges */
   margin-top: 5vw;
+  box-sizing: border-box;
 }
 
 .hero h1 {
   margin: 0;
-  font-family: "Playfair Display", sans-serif;
-  font-size: 5em;
+  font-family: "Playfair Display", serif;
+  font-size: 5rem;
   color: white;
   text-shadow: 2px 2px #242424;
 }
 
-/* FOOTER */
+/* Typing animation text */
+#hero-text {
+  font-size: 2.2em;
+  color: white;
+  text-shadow: 2px 2px #242424;
+  display: block;
+  border-right: 2px solid white; /* cursor effect */
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blinkCursor 0.7s step-end infinite;
+  margin: 0;
+}
+
+@keyframes blinkCursor {
+  from { border-color: transparent; }
+  to { border-color: white; }
+}
+
+/* Explore Button */
+#explore {
+  margin-top: 1vw;
+  background-color: #19578A;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.75em;
+  padding: 0.2em 1.2vw;
+}
+
+#explore:hover {
+  cursor: pointer;
+  background-color: #0a2439;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
+              0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* ------------------------------
+   MAIN CONTENT
+------------------------------ */
+#main, #cards {
+  width: 80%;
+  margin: 3vw auto 6vw;
+}
+
+#map {
+  float: right;
+}
+
+#content {
+  width: 40%;
+}
+
+/* ------------------------------
+   CARDS SECTION
+------------------------------ */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center horizontally */
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.cards_item {
+  flex: 1 1 300px;
+  max-width: 400px;
+  display: flex;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card_content {
+  max-width: 80%;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.card_title {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.card_text {
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.card_btn {
+  background-color: #19578A;
+  color: white;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-family: 'Open Sans', serif;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 50%;
+  display: block;
+}
+
+.card_btn:hover {
+  background-color: #0a2439;
+  cursor: pointer;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
 .footer {
   clear: both;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 20px auto 0;
   text-align: center;
-  color: red;
+  color: #C90808;
+  font-weight: bold;
+}
+
+.name {
+  color: #828282;
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+
+/* Large screens (default) */
+@media (min-width: 1025px) {
+  .cards {
+    justify-content: space-between;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  #map {
+    display: none;
+  }
+
+  #hero-text {
+    display: none;
+  }
+
+  #content {
+    width: 100%;
+  }
+
+  #main, #cards {
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .cards {
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .logo img {
+    width: 140px; /* slightly smaller logo */
+  }
+
+    /* show hamburger, hide nav */
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .navbar.active {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(25, 87, 138, 0.95);
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    box-sizing: border-box; /* make padding stay inside width */
+}
+
+.dropdown-content {
+  min-width: 100%; /* make dropdown fit mobile menu */
+  left: 0;
+}
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* hide explore button */
+  #explore {
+    display: none;
+  }
+
+  /* cards: 1 per row, centered */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cards_item {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  #logo {
+    width: 60px;
+    height: 60px; /* smaller logo */
+  }
+
+  .hero {
+    padding: 2rem 1rem; /* tighten spacing */
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  #hero-text {
+    font-size: 1rem;
+  }
+
+  #explore {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .topbar {
+    padding: 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  #hero-text {
+    font-size: 1.2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+  #logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero-text {
+    font-size: 0.9rem;
+  }
+
+  #explore {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.9rem;
+  }
 }
