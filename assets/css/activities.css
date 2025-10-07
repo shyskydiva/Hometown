@@ -1,0 +1,325 @@
+/* ------------------------------
+   GLOBAL STYLES
+------------------------------ */
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #F4EFEA;
+  overflow-x: hidden;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: "Playfair Display";
+}
+
+h3 {
+  font-size: 2em;
+  font-family: "Playfair Display";
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+/* ------------------------------
+   HEADER / NAVBAR
+------------------------------ */
+#logo {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  padding-top: 1vw;
+}
+
+#logo, .navbar {
+  margin: 0;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar {
+  margin-top: 0;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.15em;
+  gap: 40px;
+  z-index: 10;
+}
+
+.navbar a,
+.dropdown {
+  font-family: "Open Sans", sans-serif;
+  color: #19578A;
+  text-shadow: 2px 2px #bdbdbd;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.navbar a,
+.dropdown a {
+  text-align: center;
+  padding: 14px 0;
+}
+
+/* Dropdown Button */
+.dropdown .dropbtn {
+  font-size: 1.15em;
+  border: none;
+  outline: none;
+  background: none;
+  color: #19578A;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown .dropbtn i {
+  margin-left: 6px;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  text-shadow: none;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  color: rgb(8, 8, 8);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: #19578A;
+}
+
+/* ------------------------------
+   MAIN CONTENT
+------------------------------ */
+#main, #cards {
+  width: 90%;
+  margin: 3vw auto 6vw;
+}
+
+#content {
+  width: 40%;
+}
+
+/* ------------------------------
+   CARDS SECTION
+------------------------------ */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.cards_item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card_text {
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.card_image {
+  width: 100%;
+  height: auto; /* allow height to adjust automatically */
+  max-height: 600px; /* keeps large images from being too tall */
+  overflow: hidden;
+}
+
+.card_image img {
+  width: 100%;
+  height: auto; /* scale image proportionally */
+  object-fit: cover;
+  display: block;
+}
+
+.card_content {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+/* Clean up the text layout */
+.card_text {
+  margin: 0;
+  padding: 1rem; /* gives a little breathing room but not too much */
+  line-height: 1.5;
+}
+
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+.footer {
+  clear: both;
+  margin: 20px auto 0;
+  text-align: center;
+  color: #C90808;
+  font-weight: bold;
+}
+
+.name {
+  color: #828282;
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    #main, #cards {
+        width: 95%; /* a bit more narrow padding */
+        margin: 2rem auto;
+    }
+
+    .hamburger {
+        display: block;
+        color:#19578A;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(25, 87, 138, 0.95);
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        box-sizing: border-box; /* make padding stay inside width */
+    }
+
+    .navbar a, .dropdown .dropbtn {
+        color: white;
+    }
+
+    .dropdown-content {
+            min-width: 100%; /* make dropdown fit mobile menu */
+            left: 0;
+        }
+    
+        .dropdown-content a {
+            color:#19578A;
+        }
+
+    .cards {
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .card_image {
+        height: 400px; /* smaller height for tablet */
+    }
+
+    .card_text {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .card_image {
+        max-height: 300px; /* smaller height for smaller tablets */
+    }
+
+    #logo {
+        width: 60px;
+        height: 60px; /* smaller logo */
+    }
+}
+
+@media (max-width: 480px) {
+    .card_image {
+        max-height: 200px; /* small phones */
+    }
+
+    #logo {
+    width: 50px;
+    height: 50px;
+  }
+}

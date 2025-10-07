@@ -1,0 +1,84 @@
+<!-- helper file for visualizing -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hometown</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/activities.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="topbar">
+                <a href="https://www.baltimorecountymd.gov/">
+                    <img id="logo" src="../assets/img/BaltimoreLogo3.png" alt="Baltimore, MD" title="Baltimore, MD" width="100">
+                </a>
+                <button class="hamburger" id="hamburger">&#9776;</button>
+                <div class="navbar" id="navMenu">
+                    <a href="./index.html">Home</a>
+                    <div class="dropdown">
+                        <a href="#">Activities</a>
+                        <button class="dropbtn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./activities1.html">National Aquarium</a>
+                            <a href="./activities2.html">Maryland Zoo</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">Food</a>
+                        <button class="dropbtn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./food1.html">Woodberry Kitchen</a>
+                            <a href="./food2.html">The Reserve Restaurant</a>
+                        </div>
+                    </div>
+                    <a href="#">Rest</a>
+                    <a href="./feedback.html">Feedback</a>
+                    <a href="../comments/comments.php">Comments</a>
+                </div>
+            </header>
+        </div>
+        <div id="main">
+            <div id="cards">
+                <h2>Rest</h2>
+                <h3>The Hilton</h3>
+                <ul class="cards">
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image">
+                                <img src="../assets/img/hilton_outside.jpg" alt = "Outdoor Kitchen" onmouseover="this.src='../assets/img/hilton_outside2.avif';" onmouseout="this.src='../assets/img/hilton_outside.jpg';">
+                            </div>
+                            <div class="card_content">
+                                <p class="card_text">The Hilton Baltimore is a modern and well-appointed hotel in the center of downtown Baltimore that caters to a wide spectrum of guests. Whether you're in town for business or pleasure, the Hilton provides a convenient and comfortable place to stay. It's an ideal choice for convention goers and baseball fans because it's connected to the Baltimore Convention Center and adjacent to Camden Yards. The hotel has a selection of guest rooms and suites that are all designed for modern comfort, as well as amenities like a fitness center, an indoor pool, and numerous dining options, including an upscale restaurant with magnificent city views.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image">
+                                <img src="../assets/img/hilton_inside.avif" alt = "Indoor Kitchen" onmouseover="this.src='../assets/img/hilton_inside2.avif';" onmouseout="this.src='../assets/img/hilton_inside.avif';">
+                            </div>
+                            <div class="card_content">
+                                <p class="card_text">Because of its central location, visitors can easily access popular Baltimore attractions such as the Inner Harbor, the National Aquarium, and cultural institutions such as the Walters Art Museum, giving the Hilton Baltimore an excellent base for exploring the city. The Hilton Baltimore also places an emphasis on sustainability, having earned various environmental certifications. It is dedicated to environmentally friendly measures in its operations and visitor services. The hotel's commitment to both convenience and responsible hospitality ensures that all types of travelers have a pleasant and conscientious stay.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <footer>
+                <p>Last Updated: August 24, 2025</p>
+        &nbsp; &nbsp;
+        <p class="name">&copy; 2025 Shyanne Cortes</p>  
+    </footer>
+    </div>
+    <script src="../assets/js/index.js"></script>
+</body>
+</html>

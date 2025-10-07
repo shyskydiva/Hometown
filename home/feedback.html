@@ -1,0 +1,198 @@
+<!-- helper file for visualizing -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hometown</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/feedback.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="topbar">
+                <a href="https://www.baltimorecountymd.gov/">
+                    <img id="logo" src="../assets/img/BaltimoreLogo3.png" alt="Baltimore, MD" title="Baltimore, MD" width="100">
+                </a>
+                <button class="hamburger" id="hamburger">&#9776;</button>
+                <div class="navbar" id="navMenu">
+                    <a href="./index.html">Home</a>
+                    <div class="dropdown">
+                        <a href="#">Activities</a>
+                        <button class="dropbtn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./activities1.html">National Aquarium</a>
+                            <a href="./activities2.html">Maryland Zoo</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">Food</a>
+                        <button class="dropbtn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./food1.html">Woodberry Kitchen</a>
+                            <a href="./food2.html">The Reserve Restaurant</a>
+                        </div>
+                    </div>
+                    <a href="./rest.html">Rest</a>
+                    <a href="#">Feedback</a>
+                    <a href="./comments.html">Comments</a>
+                </div>
+            </header>
+        </div>
+        <div id="main">
+            			<form id="form" onsubmit="return validateForm()">
+
+				<div id="heading">
+					<h2 class = "underline"> <!-- add bottom border to this -->
+						Please tell us about your visit
+					</h2>
+				</div>
+
+				<div class="section">
+				Enter your name:
+				<input type ="text" id="name" name ="name"
+						placeholder="Required Entry" >
+				<span class="astric"> * </span>
+				<p id="error1" style="color:red; margin-left: 20px;"></p>
+				</div>
+
+				<!-- Group number form-->
+				<div class="section">
+					How many people in your group:
+					<input type ="number" name ="groupNumber" min ="0" max ="100" step ="1"
+							value ="3" style = "margin-bottom: 20px;" >
+				</div>
+
+				<div class="section">
+				<!-- Date documenting when they visited -->
+					When did you visit?
+					<input type = "date" id="visited" name = "vdate">
+					<span class="astric"> * </span><br />
+					<p id="errorMessage" style="color:red; margin-left: 20px;"></p>
+				</div>
+
+				<div class="section">
+					What state are you from?
+					<select id="state" name="state">
+						<option value="">--Please choose one--</option>
+						<option value="Alabama">AL</option>
+						<option value="Alaska">AK</option>
+						<option value="Arizona">AZ</option>
+						<option value="Arkansas">AR</option>
+						<option value="California">CA</option>
+						<option value="Colorado">CO</option>
+						<option value="Connecticut">CT</option>
+						<option value="Delaware">DE</option>
+						<option value="Florida">FL</option>
+						<option value="Georgia">GA</option>
+						<option value="Hawaii">HI</option>
+						<option value="Idaho">ID</option>
+						<option value="Illinois">IL</option>
+						<option value="Indiana">IN</option>
+						<option value="Iowa">IA</option>
+						<option value="Kansas">KS</option>
+						<option value="Kentucky">KY</option>
+						<option value="Louisiana">LA</option>
+						<option value="Maine">ME</option>
+						<option value="Maryland">MD</option>
+						<option value="Massachusetts">MA</option>
+						<option value="Michigan">MI</option>
+						<option value="Minnesota">MN</option>
+						<option value="Mississippi">MS</option>
+						<option value="Missouri">MO</option>
+						<option value="Montana">MT</option>
+						<option value="Nebraska">NE</option>
+						<option value="Nevada">NV</option>
+						<option value="New Hampshire">NH</option>
+						<option value="New Jersey">NJ</option>
+						<option value="New Mexico">NM</option>
+						<option value="New York">NY</option>
+						<option value="North Carolina">NC</option>
+						<option value="North Dakota">ND</option>
+						<option value="Ohio">OH</option>
+						<option value="Oklahoma">OK</option>
+						<option value="Oregon">OR</option>
+						<option value="Pennsylvania">PA</option>
+						<option value="Rhode Island">RI</option>
+						<option value="South Carolina">SC</option>
+						<option value="South Dakota">SD</option>
+						<option value="Tennessee">TN</option>
+						<option value="Texas">TX</option>
+						<option value="Utah">UT</option>
+						<option value="Vermont">VT</option>
+						<option value="Virginia">VA</option>
+						<option value="Washington">WA</option>
+						<option value="West Virginia">WV</option>
+						<option value="Wisconsin">WI</option>
+						<option value="Wyoming">WY</option>
+					</select>
+					<span class="astric"> * </span>
+					<p id="error3" style="color:red; margin-left: 20px;"></p>
+					<br/>
+				</div>
+
+				<div class="section">
+				<fieldset>
+				<legend>Places Visited:</legend>
+            	<label for="National Aquarium">National Aquarium<input type="checkbox" id="National Aquarium" name="pvisited"/></label><br>
+				<label for="The Maryland Zoo">The Maryland Zoo<input type="checkbox" id="The Maryland Zoo" name="pvisited"/></label><br>
+				<label for="Woodberry Kitchen">Woodberry Kitchen<input type="checkbox" id="Woodberry Kitchen" name="pvisited"/></label><br>
+				<label for="The Reserve Restaurant">The Reserve Restaurant<input type="checkbox" id="The Reserve Restaurant" name="pvisited"/></label><br>
+				<label for="Hilton Hotel">Hilton Hotel<input type="checkbox" id="Hilton Hotel" name="pvisited"/></label><br>
+				</fieldset>
+				</div>
+
+				<div class="section">
+				<!-- Field Set for favorite place -->
+				<fieldset>
+				<legend>Favorite Place - Select one</legend>
+				<input type="radio" name="fplace" value="National Aquarium" id="na"><label for="na">National Aquarium</label><br>
+				<input type="radio" name="fplace" value="The Maryland Zoo"  id="mz" ><label for ="mz">The Maryland Zoo</label><br>
+				<input type="radio" name="fplace" value="Woodberry Kitchen"  id="wk" ><label for ="wk">Woodberry Kitchen</label><br>
+				<input type="radio" name="fplace" value="The Reserve Restaurant"  id="rr" ><label for ="rr">The Reserve Restaurant</label><br>
+				<input type="radio" name="fplace" value="Hilton Hotel"  id="hh" ><label for ="hh">Hilton Hotel</label><br>
+				</fieldset>
+				</div>
+
+
+				<!-- Scrollbar for town raiting -->
+				<br>Please rate Baltimore County, MD<br>
+				<p>0
+				<input type="range" name="rating" min="0" max="10" step="1" list="set">
+				<datalist id = "set">
+				<option>0</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				</datalist>
+				10</p>
+
+				<hr>
+				
+				<div id="button">
+					<input type = "submit" id="submit">
+				</div><!-- end of div for submit button -->
+			</form>
+        </div>
+
+        <div class="footer">
+            <footer>
+                <p>Last Updated: August 24, 2025</p>
+        &nbsp; &nbsp;
+        <p class="name">&copy; 2025 Shyanne Cortes</p>  
+    </footer>
+    </div>
+    <script src="../assets/js/index.js"></script>
+</body>
+</html>

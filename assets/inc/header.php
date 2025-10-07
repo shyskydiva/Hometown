@@ -12,6 +12,7 @@
                 <a href="https://www.baltimorecountymd.gov/">
                     <img id="logo" src="<?php echo $path;?>assets/img/BaltimoreLogo3.png" alt="Baltimore, MD" title="Baltimore, MD" width="100">
                 </a>
+                <button class="hamburger" id="hamburger">&#9776;</button>
                 <div class="navbar">
                     <a href="<?php echo $path;?>home/index.php">Home</a>
                     <div class="dropdown">

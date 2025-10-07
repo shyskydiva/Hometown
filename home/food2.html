@@ -1,0 +1,84 @@
+<!-- helper file for visualizing -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hometown</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/activities.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="topbar">
+                <a href="https://www.baltimorecountymd.gov/">
+                    <img id="logo" src="../assets/img/BaltimoreLogo3.png" alt="Baltimore, MD" title="Baltimore, MD" width="100">
+                </a>
+                <button class="hamburger" id="hamburger">&#9776;</button>
+                <div class="navbar" id="navMenu">
+                    <a href="./index.html">Home</a>
+                    <div class="dropdown">
+                        <a href="#">Activities</a>
+                        <button class="dropbtn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./activities1.html">National Aquarium</a>
+                            <a href="./activities2.html">Maryland Zoo</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">Food</a>
+                        <button class="dropbtn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="./food1.html">Woodberry Kitchen</a>
+                            <a href="#">The Reserve Restaurant</a>
+                        </div>
+                    </div>
+                    <a href="./rest.html">Rest</a>
+                    <a href="./feedback.html">Feedback</a>
+                    <a href="../comments/comments.php">Comments</a>
+                </div>
+            </header>
+        </div>
+        <div id="main">
+            <div id="cards">
+                <h2>Food</h2>
+                <h3>The Reserve Restaurant</h3>
+                <ul class="cards">
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image">
+                                <img src="../assets/img/restaurant.jpg" alt = "Outdoor Setting" onmouseover="this.src='../assets/img/restaurant2.jpg';" onmouseout="this.src='../assets/img/restaurant.jpg';">
+                            </div>
+                            <div class="card_content">
+                                <p class="card_text">The Reserve is a sophisticated and premium Baltimore, Maryland restaurant recognized for its elegant ambiance and outstanding cuisine. The restaurant, housed in a historic structure, mixes modern architecture with historical charm, providing a refined dining experience. With a broad wine list and competent service, it's a popular choice for special events and fine dining.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image">
+                                <img src="../assets/img/restaurant_food.jpg" alt = "Indoor Dining" onmouseover="this.src='../assets/img/restaurant__food2.webp';" onmouseout="this.src='../assets/img/restaurant_food.jpg';">
+                            </div>
+                            <div class="card_content">
+                                <p class="card_text">The menu at The Reserve featured a diverse selection of meals inspired by fresh, locally sourced ingredients. The Reserve's menu focuses on modern American cuisine with a creative twist, with a variety of masterfully produced dishes that highlight fresh ingredients. The menu is constantly changing and expanding to cater to peoples' tastes.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <footer>
+                <p>Last Updated: August 24, 2025</p>
+        &nbsp; &nbsp;
+        <p class="name">&copy; 2025 Shyanne Cortes</p>  
+    </footer>
+    </div>
+    <script src="../assets/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hometown</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../assets/css/feedback.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="topbar">
+        <a href="https://www.baltimorecountymd.gov/">
+          <img
+            id="logo"
+            src="../assets/img/BaltimoreLogo3.png"
+            alt="Baltimore, MD"
+            title="Baltimore, MD"
+            width="100"
+          />
+        </a>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <div class="navbar" id="navMenu">
+          <a href="./index.html">Home</a>
+          <div class="dropdown">
+            <a href="#">Activities</a>
+            <button class="dropbtn">
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="./activities1.html">National Aquarium</a>
+              <a href="./activities2.html">Maryland Zoo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="#">Food</a>
+            <button class="dropbtn">
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="./food1.html">Woodberry Kitchen</a>
+              <a href="./food2.html">The Reserve Restaurant</a>
+            </div>
+          </div>
+          <a href="./rest.html">Rest</a>
+          <a href="./feedback.html">Feedback</a>
+          <a href="#">Comments</a>
+        </div>
+      </header>
+    </div>
+
+    <div id="main">
+      <form id="form" onsubmit="return addComment(event);">
+        <div id="heading">
+          <h2 class="underline">Leave Your Comments Below</h2>
+        </div>
+
+        <label for="name">Enter Your Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+        <p>&nbsp;</p>
+
+        <textarea
+          id="comment"
+          name="comment"
+          cols="90"
+          rows="12"
+          placeholder="Write your comment here..."
+          required
+        ></textarea>
+
+        <p>
+          <input type="submit" value="Add Comment" id="submit" />
+        </p>
+      </form>
+
+      <!-- where comments will appear -->
+      <div id="comments-section"></div>
+    </div>
+
+    <div class="footer">
+      <footer>
+        <p>Last Updated: August 24, 2025</p>
+        &nbsp; &nbsp;
+        <p class="name">&copy; 2025 Shyanne Cortes</p>
+      </footer>
+    </div>
+
+    <script>
+      function addComment(event) {
+  event.preventDefault();
+
+  const nameInput = document.getElementById("name");
+  const commentInput = document.getElementById("comment");
+  const commentsSection = document.getElementById("comments-section");
+
+  const name = nameInput.value.trim();
+  const commentText = commentInput.value.trim();
+
+  if (!name || !commentText) {
+    alert("Please fill in both your name and comment.");
+    return false;
+  }
+
+  const commentBox = document.createElement("div");
+  commentBox.classList.add("comment-box");
+
+  const date = new Date();
+  const dateStr = date.toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  commentBox.innerHTML = `
+    <p style="font-weight:bold; color:#19578A; margin-bottom:5px;">
+      ${name} <span style="font-size:0.85em; color:#555;">(${dateStr})</span>
+    </p>
+    <p style="margin:0; color:#333;">${commentText}</p>
+  `;
+
+  commentsSection.insertBefore(commentBox, commentsSection.firstChild);
+
+  nameInput.value = "";
+  commentInput.value = "";
+}
+
+    </script>
+  </body>
+</html>

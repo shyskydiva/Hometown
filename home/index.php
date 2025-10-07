@@ -1,21 +1,3 @@
-<!-- <div id="wrapper">
-            <h1>Baltimore County, Maryland</h1>
-<div class="lineAnimation"></div>
-<br><br>
-            <div id = "image">
-                <img id="slideshow" src="../assets/img/BaltimoreLogo.png" alt="slideshow">
-            </div>
-            <div id = content>
-                <img id="map" src="../assets/img/map_of_baltimore_county.png" alt="map of Baltimore County">
-                <h2>About</h2>
-                <p>Baltimore County is a diversified and populated jurisdiction 
-                    in the United States state of Maryland. It encircles Baltimore City 
-                    and is part of the Baltimore metropolitan area. Baltimore County 
-                    encompasses approximately 682 square miles in northern and eastern 
-                    Maryland. Its scenery is diverse, with suburban settlements, rural 
-                    areas, forests, and parks.</p>
-            </div>
-        </div> -->
 <?php
 	$fildir='home/';
 	$page='Home';
