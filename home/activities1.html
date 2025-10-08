@@ -6,7 +6,197 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-        <link rel="stylesheet" type="text/css" href="../assets/css/activities.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/index.css">
+        <style>
+            /* ------------------------------
+            HEADER/NAVBAR COLOR DIFFERENCES
+            ------------------------------ */
+            .navbar a,
+            .dropdown {
+            color: #19578A;
+            text-shadow: 2px 2px #bdbdbd;
+            }
+
+            .dropdown .dropbtn {
+            color: #19578A;
+            }
+
+            .navbar a:hover,
+            .dropdown:hover .dropbtn {
+            color: rgb(8, 8, 8);
+            }
+
+            .hamburger {
+            color: #19578A;
+            }
+
+            /* ------------------------------
+            REMOVE HERO SECTION
+            ------------------------------ */
+            .wrapper {
+            min-height: auto;
+            background-image: none;
+            position: static;
+            }
+
+            .hero {
+            display: none;
+            }
+
+            #hero-text, #explore {
+            display: none;
+            }
+
+            /* ------------------------------
+            MAIN CONTENT DIFFERENCES
+            ------------------------------ */
+            #main, #cards {
+            width: 90%;
+            }
+
+            #map {
+            display: none;
+            }
+
+            /* ------------------------------
+            CARDS LAYOUT DIFFERENCES
+            ------------------------------ */
+            .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            }
+
+            .cards_item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex: none;
+            max-width: none;
+            }
+
+            .card_content {
+            max-width: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            }
+
+            .card_title {
+            text-align: left;
+            padding: 1rem 1rem 0 1rem;
+            }
+
+            .card_text {
+            text-align: left;
+            margin: 0;
+            padding: 1rem;
+            line-height: 1.5;
+            }
+
+            .card_btn {
+            display: none;
+            }
+
+            /* Card Image Styles */
+            .card_image {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            overflow: hidden;
+            }
+
+            .card_image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            }
+
+            /* ------------------------------
+            ADDITIONAL HEADING STYLES
+            ------------------------------ */
+            h2 {
+                font-size: 3rem;
+                font-family: "Playfair Display";
+            }
+
+            h3 {
+            text-decoration: underline;
+            }
+
+            /* ------------------------------
+            RESPONSIVE DESIGN DIFFERENCES
+            ------------------------------ */
+
+            @media (max-width: 1024px) {
+                h2 {
+                    font-size: 2.5rem;
+                }
+
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+                #main, #cards {
+                    width: 95%;
+                }
+
+                .hamburger {
+                    color: #19578A;
+                }
+
+                .navbar.active {
+                    background-color: rgba(140, 176, 206, 0.95);
+                }
+
+                .navbar a, .dropdown .dropbtn {
+                    color: white;
+                }
+
+                .dropdown-content a {
+                    color: #19578A;
+                }
+
+                .cards {
+                    gap: 2rem;
+                    align-items: center;
+                }
+
+                .card_image {
+                    height: 400px;
+                }
+
+                .card_text {
+                    font-size: 1.1rem;
+                    padding: 0.8rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                h3 {
+                    font-size: 1.25rem;
+                }
+
+                .card_image {
+                    max-height: 300px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .card_image {
+                    max-height: 200px;
+                }
+            }
+            </style>
     </head>
     <body>
         <div class="wrapper">

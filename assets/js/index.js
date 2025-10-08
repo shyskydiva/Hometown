@@ -1,82 +1,94 @@
-function validateForm(){
-    "use strict";
-    var isvalid = true;
+"use strict";
 
-    if(document.getElementById("name").value == ""){
-        document.getElementById("name").style.borderColor = "red";
-        document.getElementById("name").style.backgroundColor = "pink";
-        document.getElementById("error1").innerHTML= "Enter Your Name";
-    }
-    else{
-        document.getElementById("name").style = null;
-    }
+// Form validation function
+function validateForm() {
+    let isvalid = true;
 
-    if(document.getElementById("visited").value == ""){
-        document.getElementById("visited").style.borderColor = "red";
-        document.getElementById("errorMessage").innerHTML= "Enter a valid date";
-    }
-    else{
-        document.getElementById("visited").style = null;
-    }
+    const nameInput = document.getElementById("name");
+    const visitedInput = document.getElementById("visited");
+    const stateInput = document.getElementById("state");
 
-    if(document.getElementById("state").value == ""){
-        document.getElementById("state").style.borderColor = "red";
-        document.getElementById("error3").innerHTML= "Choose a state";
-    }
-    else{
-        document.getElementById("state").style = null;
-    }
-
-    if(document.getElementById("name").value == "" || document.getElementById("visited").value == "" || document.getElementById("state").value == ""){
+    if (nameInput.value === "") {
+        nameInput.style.borderColor = "red";
+        nameInput.style.backgroundColor = "pink";
+        document.getElementById("error1").innerHTML = "Enter Your Name";
         isvalid = false;
-    }
-    else{
-        isvalid = true;
+    } else {
+        nameInput.style = null;
     }
 
-    return (isvalid);
+    if (visitedInput.value === "") {
+        visitedInput.style.borderColor = "red";
+        document.getElementById("errorMessage").innerHTML = "Enter a valid date";
+        isvalid = false;
+    } else {
+        visitedInput.style = null;
+    }
+
+    if (stateInput.value === "") {
+        stateInput.style.borderColor = "red";
+        document.getElementById("error3").innerHTML = "Choose a state";
+        isvalid = false;
+    } else {
+        stateInput.style = null;
+    }
+
+    return isvalid;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('.navbar');
 
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-}); 
-
-
-  const text = "Find your next adventure, bite, or stay.";
-  const speed = 100;  // typing speed (ms)
-  const delay = 1500; // pause before erasing
-  let i = 0;
-  let isDeleting = false;
-  const el = document.getElementById("hero-text");
-
-  function typeWriter() {
-    if (!isDeleting && i < text.length) {
-      el.innerHTML = text.substring(0, i + 1);
-      i++;
-      setTimeout(typeWriter, speed);
-    } else if (isDeleting && i > 0) {
-      el.innerHTML = text.substring(0, i - 1);
-      i--;
-      setTimeout(typeWriter, speed / 2);
-    } else {
-      isDeleting = !isDeleting;
-      setTimeout(typeWriter, delay);
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
     }
-  }
 
-  typeWriter();
-
-  const exploreBtn = document.getElementById("explore");
-  if (exploreBtn) {
-    exploreBtn.addEventListener("click", () => {
-      document.getElementById("main").scrollIntoView({
-        behavior: "smooth"
-      });
+    // Mobile dropdown toggle
+    document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
+        btn.addEventListener('click', e => {
+            const dropdown = e.target.closest('.dropdown');
+            dropdown.classList.toggle('active');
+        });
     });
-  }
-  
+
+    // Typing animation
+    const text = "Find your next adventure, bite, or stay.";
+    const speed = 100;
+    const delay = 1500;
+    let i = 0;
+    let isDeleting = false;
+    const el = document.getElementById("hero-text");
+
+    if (el) {
+        function typeWriter() {
+            if (!isDeleting && i < text.length) {
+                el.innerHTML = text.substring(0, i + 1);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else if (isDeleting && i > 0) {
+                el.innerHTML = text.substring(0, i - 1);
+                i--;
+                setTimeout(typeWriter, speed / 2);
+            } else {
+                isDeleting = !isDeleting;
+                setTimeout(typeWriter, delay);
+            }
+        }
+        typeWriter();
+    }
+
+    // Explore button scroll
+    const exploreBtn = document.getElementById("explore");
+    if (exploreBtn) {
+        exploreBtn.addEventListener("click", () => {
+            const mainElement = document.getElementById("main");
+            if (mainElement) {
+                mainElement.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
 });
