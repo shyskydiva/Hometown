@@ -379,7 +379,6 @@ textarea {
 }
 
 /* Tablets */
-/* Tablets */
 @media (max-width: 1024px) {
   #map { display: none; }
   #hero-text { display: none; }
@@ -417,7 +416,10 @@ textarea {
   }
 
   .navbar a,
-  .navbar .dropdown { width: 100%; display: block; }
+  .navbar .dropdown {
+    width: 100%;
+    display: block;
+  }
 
   .dropdown .dropbtn {
     width: 100%;
@@ -436,7 +438,9 @@ textarea {
     padding-left: 1rem;
   }
 
-  .dropdown.active .dropdown-content { display: block; }
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
 
   .dropdown-content a {
     display: block;
@@ -449,8 +453,7 @@ textarea {
     background-color: #ddd;
     color: #19578A;
   }
-}
-
+} /* ✅ THIS BRACE WAS MISSING */
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -467,8 +470,8 @@ textarea {
   }
 
   .cards_item {
-    width: 90%;
-    max-width: 400px;
+    width: 95%; /* expanded width for smaller screens */
+    max-width: none; /* removes 400px limit */
   }
 
   #logo {
@@ -483,17 +486,7 @@ textarea {
   .hero h1 {
     font-size: 3rem;
   }
-
-  #hero-text {
-    font-size: 1rem;
-  }
-
-  #explore {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-  }
 }
-
 
 /* Small Mobile */
 @media (max-width: 480px) {
@@ -510,10 +503,6 @@ textarea {
     font-size: 2em;
   }
 
-  #hero-text {
-    font-size: 1.2em;
-  }
-
   h3 {
     font-size: 1.5em;
   }
@@ -521,21 +510,9 @@ textarea {
   p {
     font-size: 1em;
   }
+
   #logo {
     width: 50px;
     height: 50px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  #hero-text {
-    font-size: 0.9rem;
-  }
-
-  #explore {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.9rem;
   }
 }
